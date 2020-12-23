@@ -1,4 +1,4 @@
-# Welcome !
+## Welcome !
 
 If like me, you have a tendency to get things done, but frequently forget how you did it, then you'll understand why it is time for me now to start a blog.
 Yes, you are right - this is the first blog intended entirely for myself. 😄
@@ -9,30 +9,6 @@ If it is to you, spread the word and even better: start your own blog and share 
 
 `nough said. Let's get started.
 
-# Installing Docker on Raspberry Pi
+### Installing Docker on Raspberry Pi
 
 [Blog Post](./docker-on-raspberry.md)
-
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-# Installing Docker on Raspberry Pi
-
-
