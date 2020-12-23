@@ -19,6 +19,19 @@ If you don't want to use `root` everytime you use Docker, you might want to add 
 sudo usermod -aG docker <your-user>
 ```
 After that you will likely have to log off and on again to have the group changes applied.
+
+## Installing Docker Compose on Raspberry Pi
+
+To install Docker Compose on Raspi, simply follow [How to install Docker and Docker Compose on Raspberry Pi](https://devdojo.com/bobbyiliev/how-to-install-docker-and-docker-compose-on-raspberry-pi).
+
+In short:
+
+```shell
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+sudo pip3 install docker-compose
+```
 ## Uninstalling Docker Engine from Raspberry Pi
 
 ```shell
@@ -44,3 +57,4 @@ For other technologies that have been dockerized for arm32v7, have a look at the
 * [Docker Multi-Arch Builds and Cross Builds](https://docs.docker.com/docker-for-mac/multi-arch/)
 * [Alternative arm32v7 Open JDK Images](https://hub.docker.com/r/arm32v7/adoptopenjdk)
 * [arm32v7 Docker Images](https://hub.docker.com/u/arm32v7)
+* [Docker Compose on Raspi](https://devdojo.com/bobbyiliev/how-to-install-docker-and-docker-compose-on-raspberry-pi)
