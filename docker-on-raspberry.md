@@ -30,7 +30,17 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
+## Docker Images for Raspberry Pi 4B
 
+Raspberry Pi 4B uses an arm32v7 chip. You will need docker images that were built for this kind of architecture.
+
+For Java Open JDK implementations you can look at [OpenJDK Docker Images for Raspberry Pi (Armv7)](https://hub.docker.com/r/adoptopenjdk/openjdk11/tags?page=1&ordering=last_updated&name=armv7) and [Alternative arm32v7 Open JDK Images](https://hub.docker.com/r/arm32v7/adoptopenjdk).
+
+For other technologies that have been dockerized for arm32v7, have a look at the [arm32v7](https://hub.docker.com/u/arm32v7) Docker Hub organization.
 ## References
 * [Docker documentation](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 * [Docker Convenience Script](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script)
+* [OpenJDK Docker Images for Raspberry Pi (Armv7)](https://hub.docker.com/r/adoptopenjdk/openjdk11/tags?page=1&ordering=last_updated&name=armv7)
+* [Docker Multi-Arch Builds and Cross Builds](https://docs.docker.com/docker-for-mac/multi-arch/)
+* [Alternative arm32v7 Open JDK Images](https://hub.docker.com/r/arm32v7/adoptopenjdk)
+* [arm32v7 Docker Images](https://hub.docker.com/u/arm32v7)
