@@ -1,4 +1,4 @@
-## Installing Docker on Raspberry Pi
+# Installing Docker on Raspberry Pi
 
 Docker can easily be installed on Raspberry Pi. The official [Docker documentation](https://docs.docker.com/engine/install/debian/#install-using-the-repository) states that you need to download and execute a Docker _convenience script_. This is described in detail [here](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script).
 
@@ -30,6 +30,6 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
 
-# References
+## References
 * [Docker documentation](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
 * [Docker Convenience Script](https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script)
