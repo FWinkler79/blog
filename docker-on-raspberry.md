@@ -18,6 +18,7 @@ If you don't want to use `root` everytime you use Docker, you might want to add 
 ```shell
 sudo usermod -aG docker <your-user>
 ```
+After that you will likely have to log off and on again to have the group changes applied.
 ## Uninstalling Docker Engine from Raspberry Pi
 
 ```shell
