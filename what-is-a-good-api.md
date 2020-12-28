@@ -32,8 +32,11 @@ For a good example of language-specific guidelines, have a look at [Apple's Swif
 
 Finally, keep in mind that your API will act as a multiplier - either for complexity or simplicity. What would you prefer it to be?
 
-References: [Three Principles of API First Design](https://medium.com/adobetech/three-principles-of-api-first-design-fa6666d9f694), [(REST) API Design Best Practices](https://swagger.io/blog/api-design/api-design-best-practices/), 
-
-See also: [Why Good APIs Matter](./why-good-apis-matter.md)
-
 **Next:** [Designing Good APIs: API First](./designing-good-apis--api-first.md)
+
+**Previous**: [Why Good APIs Matter](./why-good-apis-matter.md)
+
+## References
+* [Three Principles of API First Design](https://medium.com/adobetech/three-principles-of-api-first-design-fa6666d9f694)
+* [(REST) API Design Best Practices](https://swagger.io/blog/api-design/api-design-best-practices/)
+
