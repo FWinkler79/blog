@@ -37,7 +37,7 @@ For errors that are clearly caused by wrong API usage, the proper way of dealing
 The rationale behind crashing your consumer is that by using your API in a wrong way, the consumer has actually created a _bug_ and needs to be informed about that during the development process. Provided that your consumers have proper tests in place - which is commonly agreed best practice - this crash / bug will immediately be detected and can be fixed once and for all.  
 Make sure to include a proper error message when using Asserts, so that developers know what they have done wrong and can fix it.
 
-**Use `Asserts` sparsely!** You should be 100% sure that the error is a result of wrong API usage - e.g. because developers have not read your documentation properly, or because of a violation of a fundamental pre-requisite.
+**Use Asserts sparsely!** You should be 100% sure that the error is a result of wrong API usage - e.g. because developers have not read your documentation properly, or because of a violation of a fundamental pre-requisite.
 For errors that could happen at runtime, too - e.g. since a user of your consumer's software provided illegal arguments to your API (rather than the developers) - using `Asserts` is wrong and could render your API **unusable**. 
 Asserts will crash your consumers _without giving them a chance_ to either catch and handle or report the error that occurred to their users.
 
