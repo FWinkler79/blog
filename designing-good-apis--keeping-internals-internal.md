@@ -18,5 +18,5 @@ Proper usage of scoping and information hiding keywords (like public, protected,
 
 Failing to do so, _pollutes_ your API, _distracts_ from its actual purpose and makes implementation details a part of your API that you will _not be able to change later_ without **breaking compatibility**.
 
-**Next:**[Designing Good APIs: Documentation](./designing-good-apis--documentation.md)  
-**Previous:**[Designing Good APIs: Modelling Errors](./designing-good-apis--modelling-errors.md)
+**Next:** [Designing Good APIs: Documentation](./designing-good-apis--documentation.md)  
+**Previous:** [Designing Good APIs: Modelling Errors](./designing-good-apis--modelling-errors.md)
