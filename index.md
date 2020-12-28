@@ -11,7 +11,7 @@ If it is to you, spread the word and even better: start your own blog and share 
 
 ## Installing Docker on Raspberry Pi
 
-[Blog Post](./docker-on-raspberry.md)
+* [Blog Post](./docker-on-raspberry.md)
 
 ## Designing Good APIs
 
