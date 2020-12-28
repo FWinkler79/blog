@@ -52,8 +52,7 @@ First, it allows you to anticipate all the things that might go wrong - this wil
 Second, there are errors your library or component _will not be able to handle itself_. These errors will have to be reported to the developers consuming your component and as such become a part of your API definition that needs to be kept stable and backwards-compatible over time.  
 Distinguishing the different kinds of errors and handling them properly in your API is not trivial. Have a look at our [Modelling Errors](./designing-good-apis--modelling-errors.md) post for ways to classify and model errors.
 
-**Next:** [Designing Good APIs: Using Proper Names](./designing-good-apis--using-proper-names.md)
-
+**Next:** [Designing Good APIs: Using Proper Names](./designing-good-apis--using-proper-names.md)  
 **Previous:** [What is a Good API](./what-is-a-good-api.md)
 ## References
 * [Three Principles of API First](https://medium.com/adobetech/three-principles-of-api-first-design-fa6666d9f694)
