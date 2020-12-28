@@ -15,10 +15,10 @@ If it is to you, spread the word and even better: start your own blog and share 
 
 ## Designing Good APIs
 
-[Why Good APIs Matter](./why-good-apis-matter.md)
-[What Is A Good API?](./what-is-a-good-api.md)
-[Designing a Good API: API First](./designing-good-apis--api-first.md)
-[Designing a Good API: Using Proper Names](./designing-good-apis--using-proper-names.md)
-[Designing a Good API: Modelling Errors](./designing-good-apis--modelling-errors.md)
-[Designing a Good API: Documentation](./designing-good-apis--documentation.md)
-[Designing a Good API: Keeping Internals Internal](./designing-good-apis--keeping-internals-internal.md)
+* [Why Good APIs Matter](./why-good-apis-matter.md)
+* [What Is A Good API?](./what-is-a-good-api.md)
+* [Designing a Good API: API First](./designing-good-apis--api-first.md)
+* [Designing a Good API: Using Proper Names](./designing-good-apis--using-proper-names.md)
+* [Designing a Good API: Modelling Errors](./designing-good-apis--modelling-errors.md)
+* [Designing a Good API: Documentation](./designing-good-apis--documentation.md)
+* [Designing a Good API: Keeping Internals Internal](./designing-good-apis--keeping-internals-internal.md)
