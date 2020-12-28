@@ -8,11 +8,6 @@ But all joking aside, I hope that some of the stuff I write down here, will be o
 If it is to you, spread the word and even better: start your own blog and share what you have learnt.
 
 `nough said. Let's get started.
-
-## Installing Docker on Raspberry Pi
-
-* [Blog Post](./docker-on-raspberry.md)
-
 ## Designing Good APIs
 
 * [Why Good APIs Matter](./why-good-apis-matter.md)
@@ -22,3 +17,6 @@ If it is to you, spread the word and even better: start your own blog and share 
 * [Designing a Good API: Modelling Errors](./designing-good-apis--modelling-errors.md)
 * [Designing a Good API: Documentation](./designing-good-apis--documentation.md)
 * [Designing a Good API: Keeping Internals Internal](./designing-good-apis--keeping-internals-internal.md)
+## Installing Docker on Raspberry Pi
+
+* [Blog Post](./docker-on-raspberry.md)
