@@ -1,6 +1,6 @@
 # Why Good APIs Matter
 
-![Business Card](./.assets/bizCard.jpg)
+![Business Card](https://github.com/FWinkler79/blog/blob/gh-pages/.assets/bizCard.jpg)
 
 Your API is the user interface for your consumers' developers. It is the first and most important way to access and interact with your product - be it a service or a software component of a reuse library.
 
