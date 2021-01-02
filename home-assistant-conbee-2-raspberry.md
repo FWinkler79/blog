@@ -24,20 +24,59 @@ So eventually, what we will do in this blog is the following:
 
 ## Pre-Requisites
 
-Before we start, let's discuss the pre-requisites. I like Docker a lot, since it allows me to keep software packaged and well-contained.
+Before we start, let's discuss the pre-requisites.
+
+I like Docker a lot, since it allows me to keep software packaged and well-contained.
 I won't pollute my Raspbian installation with old Python versions or outdated libraries because evth. I need is run from within a container. Easy to start, easy to stop, easy to get rid off and keep the host clean.
 
 Therefore, having a Docker installation on your Raspberry Pi is a pre-requisite. You can find more about how to install it [here](https://fwinkler79.github.io/blog/docker-on-raspberry.html).
 
+Other than that, you need a Raspberry Pi - I use the 4B variant, but a 3-series with enough RAM should be fine as well.
+You also need the [Conbee II](https://phoscon.de/en/conbee2) stick, although also the [Raspbee II](https://phoscon.de/en/raspbee2) should work, if you prefer to have everything integrated in one box.
 ## Installing Conbee II on Raspberry Pi
 
+Installing is as easy as pluggin the Conbee II stick into a USB port. However, it's a bit more tricky than that.
 
+❗ Conbee II must be connected to a USB 2.0 slot! These are the black ones on your Raspberry Pi (as opposed to the blue ones that aree USB 3.x)
+ 
+❗ It is highly recommend to use a USB extension cable, if you are connecting Conbee II it to the Raspberry Pi. So rather than directly plugging the stick into the Raspi, plug it into an extenion cable or USB hub and the other end of the cable into the Rasperry Pi.
+
+> **Why the extension cable?** The reason for the extension cable is, that the Raspberry PI WiFi antenna is interfering with the Conbee II Zigbee signal, which runs on a very similar frequency. This can lead to severe signal interference, leading to Zigbee signal loss and suddenly not being able to control your Zigbee devices anymore. This happened to me, when I had connected Conbee II directly to my Raspi and then started Kodi media center on Raspi to watch / stream video on my TV. Since Kodi streamed evth. over WiFi the Raspi WiFi signl interfered with Conbee II which was going crazy. The result was that I could not reliably control the Zigbee devices via Conbee II anymore nor add new devices to my mesh. Adding an extension cable fixed it!
 ## Running deCONZ Docker Image
 
-❗ Conbee II should be connected to USB 2.0 slots only and I highly recommend using a USB extension cable, if you are connecting it to Raspberry Pi. 
+To "drive" Conbee II you need the [deCONZ](https://phoscon.de/en/conbee2/software#deconz) app. You could install it directly on the Raspi, but its much easier and cleaner with Docker.
 
-> Fun fact: The reason for the extension cable is, that the Raspberry PI WiFi antenna is interfering with the Conbee II Zigbee signal, which runs on a very similar frequency. This can lead to severe signal interference, leading to Zigbee signal loss and suddenly not being able to control your Zigbee devices anymore. It happened to me, when I had connected Conbee II directly to my Raspi and then started Kodi media center on Raspi to watch / stream video on my TV. Since Kodi streamed evth. over WiFi the Raspi WiFi was firing away with the result that I could not reliably control the Zigbee devices via Conbee II anymore. Adding an extension cable fixed it!
+All you need is the following Docker-Compose file:
 
+```dockerfile
+version: "3"
+services:
+  deconz:
+    image: marthoc/deconz
+    container_name: deconz
+    network_mode: host
+    restart: always
+    volumes:
+      - ./storage:/root/.local/share/dresden-elektronik/deCONZ
+    devices:
+      - /dev/ttyACM0
+    environment:
+      - DECONZ_WEB_PORT=80
+      - DECONZ_WS_PORT=443
+      - DEBUG_INFO=1
+      - DEBUG_APS=0
+      - DEBUG_ZCL=0
+      - DEBUG_ZDP=0
+      - DEBUG_OTAU=0
+```
+
+This pulls the community Docker image of deCONZ that is referenced in the official deCONZ documentation as the one to use when using Docker. You can find the [deCONZ Docker Image](https://hub.docker.com/r/marthoc/deconz) on Docker Hub (and on [Github](https://github.com/marthoc/docker-deconz) for more information about the image).
+
+The compose file above also maps a local `storage` folder into the container, resulting in the configurations written by deCONZ to be available from your Raspi - if you are curious or want to back them up.
+
+It also maps the `/dev/ttyACM0` device into the container - that's the USB device name used by Conbee II. Essentially that provides deCONZ in the docker container access to your Conbee II stick.
+
+For the rest of the environment configurations see the [image documentation on Github](https://github.com/marthoc/docker-deconz) for more information about the image).
 ## Updating Conbee II Firmware
 
 ## Running Home Assistant Docker Image
@@ -51,6 +90,7 @@ Therefore, having a Docker installation on your Raspberry Pi is a pre-requisite.
 * [Installing Docker on Raspberry Pi](https://fwinkler79.github.io/blog/docker-on-raspberry.html)
 * [Home Assistant](https://www.home-assistant.io/) | [Home Assistant Docker Image](https://hub.docker.com/r/homeassistant/raspberrypi4-homeassistant)
 * [Conbee II](https://phoscon.de/en/conbee2) | [deCONZ](https://phoscon.de/en/conbee2/software#deconz) | [deCONZ Docker Image](https://hub.docker.com/r/marthoc/deconz) ([Github](https://github.com/marthoc/docker-deconz)) | [Phoscon App](https://phoscon.de/en/app/doc) | [Supported Devices](https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Supported-Devices#lights)
+* [Raspbee II](https://phoscon.de/en/raspbee2) 
 * [OSRAM Smart+ Plug]() | [OSRAM Smart+ Plug Reset](https://www.smarthomeassistent.de/osram-smart-plug-steckdose-reset-zuruecksetzen-kopplungsmodus/)
 * [Philips Hue](https://www.philips-hue.com/en-us) | [Hue Bridge](https://www.philips-hue.com/en-us/p/hue-bridge/046677458478)
 * [Ikea Trådfri](https://www.ikea.com/de/de/product-guides/tradfri-home-smart-beleuchtung-pub61503271)
