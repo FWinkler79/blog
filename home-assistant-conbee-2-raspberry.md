@@ -77,8 +77,61 @@ The compose file above also maps a local `storage` folder into the container, re
 It also maps the `/dev/ttyACM0` device into the container - that's the USB device name used by Conbee II. Essentially that provides deCONZ in the docker container access to your Conbee II stick.
 
 For the rest of the environment configurations see the [image documentation on Github](https://github.com/marthoc/docker-deconz) for more information about the image).
+
+To start deCONZ using Docker on your Raspberry Pi, execute:
+
+```bash
+docker-compose up
+```
+
+Finally confirm thet deCONZ is running using the following command and confirming that the container named `deconz` is running:
+
+```bash
+docker container ls
+```
 ## Updating Conbee II Firmware
 
+Before we start Home Assistant, we should first make sure that Conbee II has the latest firmware installed. Luckily we can check that and even install the latest firmware using the same Docker image we started in the section before.
+
+To do so, we first need to stop the `deconz` container again. But first we need to get the filename of the latest firmware that can be installed. So we peek into the started `deconz` Docker container using:
+
+```bash
+docker logs deconz
+```
+
+There we find there a log output similar to this one:
+
+```bash
+GW update firmware found: /usr/share/deCONZ/firmware/deCONZ_Rpi_0x261e0500.bin.GCF
+GW firmware version: 0x261c0500
+GW firmware version shall be updated to: 0x261e0500
+```
+
+Copy and save the firmware file name, i.e. `deCONZ_Rpi_0x261e0500.bin.GCF` in the example above.
+
+Now we shut down the container again, with `docker-compose` that's as easy as executing:
+
+```bash
+docker-compose down
+```
+
+Now proceed as follows:
+
+1. Execute the following command:
+   ```bash
+   docker run -it --rm --entrypoint "/firmware-update.sh" --privileged --cap-add=ALL -v /dev:/dev -v /lib/modules:/lib/modules -v /sys:/sys marthoc/deconz
+   ```
+1. Follow the prompts and first enter the path (e.g. `/dev/ttyACM0`) that corresponds to your Conbee device in the listing.
+1. Then paste the full file name that corresponds to the firmware file name that you copied from the deCONZ container logs before
+1. If the device/path and file name look OK, type `Y` to start flashing!
+
+Once that is done, you can start the container again using:
+
+```bash
+docker-compose up
+```
+
+Congratulations, your Conbee II is now updated to the latest firmware. More info on this process can be found on the [deCONZ Docker image github repository](https://github.com/marthoc/docker-deconz#updating-conbeeraspbee-firmware).
 ## Running Home Assistant Docker Image
 
 ## Adding OSRAM Smart+ Plugs Home Assistant
