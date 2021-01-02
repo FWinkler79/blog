@@ -22,6 +22,6 @@ If it is to you, spread the word and even better: start your own blog and share 
 
 * [Blog Post](./docker-on-raspberry.md)
 
-## Automating your Home with Home Assistant, Conbee II and Raspberry Pi
+## Home Automation with Raspberry Pi
 
 * [Blog Post](./home-assistant-conbee-2-raspberry.md)
