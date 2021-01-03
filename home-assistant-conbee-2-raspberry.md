@@ -89,6 +89,8 @@ Finally confirm thet deCONZ is running using the following command and confirmin
 ```bash
 docker container ls
 ```
+
+With everything up and running, deCONZ should be available on port `80` of your raspberry PI, i.e. by the following URL: `http://<your raspi DNS name or IP>`. If you have any Zigbee devices to attach already, you can add them now. See section [Adding OSRAM Smart+ Plugs Home Assistant](#adding-osram-smart-plugs-home-assistant) for details on how to do that.
 ## Updating Conbee II Firmware
 
 Before we start Home Assistant, we should first make sure that Conbee II has the latest firmware installed. Luckily we can check that and even install the latest firmware using the same Docker image we started in the section before.
@@ -134,9 +136,128 @@ docker-compose up
 Congratulations, your Conbee II is now updated to the latest firmware. More info on this process can be found on the [deCONZ Docker image github repository](https://github.com/marthoc/docker-deconz#updating-conbeeraspbee-firmware).
 ## Running Home Assistant Docker Image
 
+Running Home Assistant from Docker is just as easy as running deCONZ. All you need is a docker-compose file like this:
+
+```dockerfile
+version: "3.7"
+services:
+  home-assistant:
+    image: homeassistant/raspberrypi4-homeassistant:stable 
+    container_name: hass
+    network_mode: host
+    restart: always
+    init: true 
+    volumes:
+      - ./storage:/config
+    environment:
+      - TZ=Europe/Berlin
+```
+
+Then you can start Home Assistant using:
+
+```bash
+docker-compose up
+```
+
+Finally, confirm a container with name `hass` was created and is running, using:
+
+```bash
+docker container ls
+```
+
+With everything up and running, Home Assistant should now be available on port `8123` of your raspberry Pi, i.e by the URL `http://<raspi DNS name or IP>:8123`.
+
+## Enabling Home Assistant Integrations
+
+Home Assistant comes with a variety of [integrations](https://www.home-assistant.io/integrations/).
+
+The [deConz integration](https://www.home-assistant.io/integrations/deconz/) is amongst them, and usually is detected automatically by Home Assistant. But there is also one for [mobile companion applications](https://www.home-assistant.io/integrations/mobile_app/) and [iOS](https://www.home-assistant.io/integrations/ios/).
+
+You can add or remove integrations in Home Assistant via _Configurations > Integrations_.
+
+In case the deCONZ integration was not detected, make sure you add it manually. You will need it to connect the deCONZ application to Home Assistant and control devices detected by deCONZ through Home Assistant.
+
+Once added click the _Configure_ button on the deCONZ integration and follow the steps displayed on screen.
 ## Adding OSRAM Smart+ Plugs Home Assistant
 
-## Controlling Your Home with HassApp and Home Assistant Companion App
+Home Assistant has a lot of integrations to sensors that you probably did not even consider to be ones. For example your iPhone can act as a variety of sensors that Home Assistant can use for automation and defining special actions.
+
+However, it becomes real fun, when you actually add Zigbee hardware to your home.
+There are plenty available already, and most of them should work with Conbee II! As a rule of thumb: whenever you find a Zigbee device that is compatible with either IKEA Trådfri or Philips Hue, it should also work on Conbee II.
+
+One rather inexpensive Zigbee device (that can be surprisingly useful despite its simplicity) is the [OSRAM / Ledvance Smart+ Plug](https://www.amazon.de/-/en/LEDVANCE-switchable-Directly-compatible-Compatible/dp/B07VCG5G7H/ref=pd_lpo_60_img_0/261-4298904-8029155?_encoding=UTF8&pd_rd_i=B07SFZ81SK&pd_rd_r=ee82a327-28f9-4824-b942-1358971cdb11&pd_rd_w=GPpl3&pd_rd_wg=jmJg8&pf_rd_p=d5c9797d-0238-4119-b220-af4cc3420918&pf_rd_r=174AMG84CDYW713ZPBYD&refRID=174AMG84CDYW713ZPBYD&th=1). It's a Zigbee-controlled power socket, that you plug into your wall outlet. You then plug a conventional device, e.g. a lamp, light strip or coffee machine into it and you can then switch on and of the device via Home Assistant and deCONZ. This allows you to control your lights from your mobile, allows you to automate your home based on events, and generally opens up a whole new world of smart opportunities for your home and life!
+
+You can find the Smart+ plug on various sites, best prices ranging from 7€ to 11€.
+
+Once you have one, adding it to deCONZ and Home Assistant is very easy:
+
+1. Open your deCONZ app in your browser, e.g. `http://<raspi DNS name or IP>` and login to your _Phoscon GW_ (aka. Conbee II).
+2. Click on the "burger menu" icon in the top left.
+3. Under _Devices_ select _Lights_ (a plug / binary actuator will be a _light_ in deCONZ for now)
+4. Click the _Add new lights_ button. deCONZ will now scan for approx. 3 minutes for new devices.
+5. Plug in your Smart+ plug into a power outlet, and **press and hold its power button for approx. 10 seconds until you hear a clicking noise**. The plug is now reset and in pairing mode.
+6. deCONZ should now detect the new plug, it might take a few seconds, until it has detected it fully.
+
+That's it. Once it is detected, you can go back to the deCONZ main page and add the plug to a group - although that is not strictly required:
+
+1. Click _Add Group_ and give it a name (e.g. "Living Room" or "Lamp" or "Coffee Machine")
+2. Click the _Edit_ button and select _Manage Lights_.
+3. From the _Available Lights_ find your plug and press the _+_ button on it to add it to the group.
+4. Save the group.
+5. Back on the main page, click on your group and tap the _Lights_ button.
+6. There you see your plug, and if you click on its icon, you can switch it on and off, this is good for testing if evth. works.
+
+With that done, your plug is ready to be used.
+
+Open Home Assistant from your browser now. After a short while, Home Assistant (via the deCONZ integration) should now detect the newly added plug and you can then add it as a device on your HassApp mobile app, if you like. See the [Controlling Your Home with your Mobile](#controlling-your-home-with-your-mobile) section for details.
+
+You can also reload the deCONZ integration to refresh / re-trigger device detection. To do so:
+1. In Home Assistant go to _Configurations_ > _Integrations_
+2. On the _deCONZ_ integration find the three dots / elipsis button and click it.
+3. Select _Reload_
+
+> Note: if you created a group in deCONZ, Home Assistant will detect **two** devices: one for your actual plug, and one for the group.
+> Both can be useful, as with groups you can put several device into a single logical room, or group them by functionality. You can then simply add the group as a device in your mobile HassApp and controll all of the Zigbee devices with a single switch.  
+> You could also use Home Assistant _Scenes_ for that kind of grouping, but since Scenes always capture a target state of Zigbee devices you would have to create two scenes in Home Assitant - one for the "on" state and one for the "off" state.
+
+Play around with it a little. You'll get the hang of it... 😉
+## Controlling Your Home with your Mobile
+
+There are two noteworhy apps, you might want to install:
+
+1. [Home Assistant](https://www.home-assistant.io/integrations/mobile_app/) (official companion app)
+2. [HassApp](https://community.home-assistant.io/t/hassapp-an-alternative-ios-app-to-empower-your-ha/97713) (native iOS app)
+
+It's best to read up on them online. The first one is basically providing you with the same (HTML-based) interface to Home Assistant that you see in your browser. The second one is a fully native iOS app.
+
+Both are useful, and I use the first one to control the Home Assistant application itself and its configurations. The second one is a beautifully written, userfriendly and fully native iOS app that I use to control my home and install on devices of my family members, whom I don't want to mess with the configurations. You can create rooms in it and add devices from Home Assistant to it. Then you can control them easily from your phone by switching lights, etc.
+
+See and decide for yourself!
+## Troubleshooting
+
+Home Assistant, Zigbee and Conbee II are not without quirks - although generally things are very stable. Here are some tips if you run into trouble nonetheless.
+
+### Problems Finding or Controlling Devices
+
+> The Raspberry PI WiFi antenna can interfere with the Conbee II Zigbee signal, which runs on a very similar frequency. When plugged directly into the Raspi, your Conbee II stick can suffer from interference resulting in signal loss or unreliable Zigbee transmission. As a result, you suddenly might not be able to control your Zigbee devices anymore!
+
+❗ Make sure Conbee II is connected to a USB 2.0 slot! These are the black ones on your Raspberry Pi (as opposed to the blue ones that aree USB 3.x)
+ 
+❗ If you are suffering from unreliable device control (devices not reacting or only after a second switching attempt) make sure to use a USB extension cable, if you are connecting Conbee II it to the Raspberry Pi. Rather than directly plugging the stick into the Raspi, plug it into an extenion cable or USB hub and the other end of the cable into the Rasperry Pi!
+### Docker Container / Startup Problems
+In case of problems with the docker containers, deCONZ or Home Assistant startup, you can inspect the startup logs within the containers like this:
+
+```bash
+docker logs <container name>    # the latest logs.
+docker logs -f <container name> # automatically updating logs.
+```
+### Mobile App Problems
+For problems with the mobile apps make sure your mobile device is in the same WLAN network as your raspberry pi.
+Also make sure the URL pointing to Home Assistant is correct. It usually is `http://<your raspi DNS name or IP>:8123`.
+
+Sometimes it also helps to completely reset the mobile apps and start fresh. As a last resort, uninstall the app, re-install it and then set it up again. 
+
+Also note that Home Assistant keeps a list of devices and entities for your mobile app's - make sure to remove those as well, if the problems persist. You can do so via _Configurations_ > _Integrations_, or via _Configurations_ > _Devices_ and _Configurations_ > _Entities_. After that you may need to restart Home Assistant.
 
 ## References
 
