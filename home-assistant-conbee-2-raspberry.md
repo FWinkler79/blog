@@ -42,6 +42,7 @@ Installing is as easy as pluggin the Conbee II stick into a USB port. However, i
 ❗ It is highly recommend to use a USB extension cable, if you are connecting Conbee II it to the Raspberry Pi. So rather than directly plugging the stick into the Raspi, plug it into an extenion cable or USB hub and the other end of the cable into the Rasperry Pi.
 
 > **Why the extension cable?** The reason for the extension cable is, that the Raspberry PI WiFi antenna is interfering with the Conbee II Zigbee signal, which runs on a very similar frequency. This can lead to severe signal interference, leading to Zigbee signal loss and suddenly not being able to control your Zigbee devices anymore. This happened to me, when I had connected Conbee II directly to my Raspi and then started Kodi media center on Raspi to watch / stream video on my TV. Since Kodi streamed evth. over WiFi the Raspi WiFi signl interfered with Conbee II which was going crazy. The result was that I could not reliably control the Zigbee devices via Conbee II anymore nor add new devices to my mesh. Adding an extension cable fixed it!
+
 ## Running deCONZ Docker Image
 
 To "drive" Conbee II you need the [deCONZ](https://phoscon.de/en/conbee2/software#deconz) app. You could install it directly on the Raspi, but its much easier and cleaner with Docker.
