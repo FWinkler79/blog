@@ -50,14 +50,14 @@ The last of the commands above uses the `buildx` command to cross-build a docker
 
 After that you can pull the image onto your Raspberry Pi (executing a docker pull there) and run it.
 
-❗Note: You can also build images for multiple architectures at once and push them. See [Docker Multi-Arch Builds and Cross Builds](https://docs.docker.com/docker-for-mac/multi-arch/) for details.
-
-For a list of available Raspberry Pi arm32v7-compatible base images have a look here: [arm32v7 Docker Images](https://hub.docker.com/u/arm32v7)
+❗Note: You can also build images for multiple architectures at once and push them. See [Docker Multi-Arch Builds and Cross Builds](https://docs.docker.com/docker-for-mac/multi-arch/) for details. For a list of available Raspberry Pi arm32v7-compatible base images have a look here: [arm32v7 Docker Images](https://hub.docker.com/u/arm32v7)
 
 Happy cross-building!
 
-P.S.: Needless to say that you cannot only cross-build for arm32v7 architectures. Here is a list of the currently supported ones on my system: `linux/amd64, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6`
-
+P.S.: Needless to say that you cannot only cross-build for arm32v7 architectures. Here is a list of the currently supported ones on my system: 
+```bash
+linux/amd64, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6
+```
 ## References
 
 * [Docker Multi-Arch Builds and Cross Builds](https://docs.docker.com/docker-for-mac/multi-arch/)
