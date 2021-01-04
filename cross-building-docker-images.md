@@ -8,6 +8,12 @@ Recently I wanted to build a Docker image containing a Spring Boot application t
 
 The reason is, of course, that Docker images are hardware architecture-specific, meaning that a Docker image built on Mac with an x86_64 CPU architecture will not start on a Raspberry Pi with an arm32v7 architecture chip.
 
+> Note: you can find out the architecture your Raspberry Pi is using by typing `uname -a` on the command line. The output will look something like this:
+> ```
+> Linux raspberrypi 5.4.72-v7l+ #1356 SMP Thu Oct 22 13:57:51 BST 2020 armv7l GNU/Linux
+> ```
+> Note the `armv7l` in the output. That's the architecture your Raspbian uses.
+
 ## The Simple Solution
 
 The simple solution to that problem would be to build everything on the architecture that it should run on, e.g. build the Spring Boot application and docker image on Raspberry Pi instead of a Mac / Linux / Windows machine. However that has a few downsides:
@@ -49,6 +55,8 @@ After that you can pull the image onto your Raspberry Pi (executing a docker pul
 For a list of available Raspberry Pi arm32v7-compatible base images have a look here: [arm32v7 Docker Images](https://hub.docker.com/u/arm32v7)
 
 Happy cross-building!
+
+P.S.: Needless to say that you cannot only cross-build for arm32v7 architectures. Here is a list of the currently supported ones on my system: `linux/amd64, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/arm/v7, linux/arm/v6`
 
 ## References
 
