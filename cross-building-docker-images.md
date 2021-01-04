@@ -18,11 +18,11 @@ The reason is, of course, that Docker images are hardware architecture-specific,
 
 The simple solution to that problem would be to build everything on the architecture that it should run on, e.g. build the Spring Boot application and docker image on Raspberry Pi instead of a Mac / Linux / Windows machine. However that has a few downsides:
 
-* **Build Speed** - The Raspi arm32v7 chip is a little monster, but it's nothing compared to a full-blown Mac with an x86 chip inside and 32 GB of RAM. Besides, you probably develop on your Mac all the time, so that's where all your tools are. You'll be faster on the Mac for sure - build and development-wise.
+* **Build speed** - The Raspi arm32v7 chip is a little monster, but it's nothing compared to a full-blown Mac with an x86 chip inside and 32 GB of RAM. Besides, you probably develop on your Mac all the time, so that's where all your tools are. You'll be faster on the Mac for sure - build and development-wise.
 
 * **You pollute your Raspberry Pi** - Basically you would turn your Raspi into your  development environment, when really all you want it be is your production environment, i.e. the tiny always-on server that runs your home and favourite media center.
 
-* **Development Turnaround Cycles** - Most likely you develop on your Mac / Linux / Windows machine, and then will push your changes to a Github that you then fetch from on your Raspi before triggering a build. Made a mistake? Do it again! You get the point - it sucks.
+* **Development turnaround cycles** - Most likely you develop on your Mac / Linux / Windows machine, and then will push your changes to a Github that you then fetch from on your Raspi before triggering a build. Made a mistake? Do it again! You get the point - it sucks.
 
 ## The Better Solution
 
