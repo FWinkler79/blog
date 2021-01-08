@@ -72,6 +72,3 @@ Some languages provide exceptions, but developers will frown upon them being use
 For further reading here is a nice guide of [Do's and Don't's for exception handling in Java](https://howtodoinjava.com/best-practices/java-exception-handling-best-practices/).
 
 And if you are already familiar with Java exception handling, make sure you also have a look at the newly introduced [try-with-resource Exception handling](https://stackify.com/specify-handle-exceptions-java/#tryWithResource).
-
-**Next:** [Designing Good APIs: Keeping Internals Internal](./designing-good-apis--keeping-internals-internal.md)  
-**Previous:** [Designing Good APIs: Using Proper Names](./designing-good-apis--using-proper-names.md)

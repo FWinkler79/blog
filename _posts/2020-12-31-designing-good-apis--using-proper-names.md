@@ -30,7 +30,5 @@ For example, `array.sort()` implies mutating the array. In contrast `array.sorte
 
 * **Stick to naming conventions** - each target language or platform has its own naming conventions. These are usually explicitly or implicitly defined by their respective developer community. Knowing and adhering to these conventions is important if you are developing open-source software, return something to the community or want to gain acceptance and adoption. Ignoring these conventions will deteriorate developer experience and acceptance of your product.
 
-**Next:** [Designing Good APIs: Modelling Errors](./designing-good-apis--modelling-errors.md)  
-**Previous:** [Designing Good APIs: API First](./designing-good-apis--api-first.md)
 ## References
 [Apple's API Guidelines](https://swift.org/documentation/api-design-guidelines/)

@@ -34,5 +34,3 @@ And keep in mind another of Apple's guidance:
 > If you are having trouble describing your API’s functionality in simple terms, you may have designed the wrong API.
 
 Once you notice this is the case, start improving your API!
-
-**Previous:** [Designing Good APIs: Keeping Internals Internal](./designing-good-apis--keeping-internals-internal.md)
