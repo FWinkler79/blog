@@ -2,11 +2,14 @@
 modify_date: 2021-01-02 00:05:00
 title: Designing Good APIs - Keeping Internals Internal
 tags: api-design
+cover: /images/lock_cover.jpg
 ---
 
-![Lock](/images/lock.jpg)
+![Image](/images/lock.jpg){:.rounded}
 
 A good API focuses only on the _business functionality_ of a service or component and it hides the technical details of the implementation from its consumers.
+
+<!--more-->
 
 Very often, developers tend to expose internal technical details in the API - mostly because they fail to detach from the technical intricacies they are concerned with while they _implement_ the API.
 

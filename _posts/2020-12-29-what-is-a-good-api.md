@@ -2,12 +2,16 @@
 modify_date: 2020-12-29 00:01:00
 title: What Is a "Good" API
 tags: api-design
+cover: /images/craftsmanship_cover.jpg
 ---
 
-![Craftsmanship](/images/craftsmanship.jpg)
+![Image](/images/craftsmanship.jpg){:.rounded}
 
 Many consider API design an art. 
-This would imply that it requires a level of ingenuity and creative spirit to come up with a pleasing result.  It would also imply that a good / pleasing API is widely subject to "a matter of taste". 
+This would imply that it requires a level of ingenuity and creative spirit to come up with a pleasing result. It would also imply that a good / pleasing API is widely subject to "a matter of taste".
+In this article we show that it is actually much more than that.
+
+<!--more-->
 
 Undoubtedly, if designing a good API was easy, there would not be an abundance of horrific counterexamples available on the Internet today. 
 As some aspects of API design may depend on taste and creativity, we believe a lot of what is required to create a good API can actually be _learned_. 
@@ -35,9 +39,6 @@ Use the following qualities as a checklist and litmus test for any API you creat
 For a good example of language-specific guidelines, have a look at [Apple's Swift Coding Conventions](https://swift.org/documentation/api-design-guidelines/). Although specific to Swift, a lot of the key messages generally apply to good API design.
 
 Finally, keep in mind that your API will act as a multiplier - either for complexity or simplicity. What would you prefer it to be?
-
-**Next:** [Designing Good APIs: API First](./designing-good-apis--api-first.md)  
-**Previous**: [Why Good APIs Matter](./why-good-apis-matter.md)
 ## References
 * [Three Principles of API First Design](https://medium.com/adobetech/three-principles-of-api-first-design-fa6666d9f694)
 * [(REST) API Design Best Practices](https://swagger.io/blog/api-design/api-design-best-practices/)

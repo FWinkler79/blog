@@ -2,9 +2,16 @@
 modify_date: 2021-01-04 00:06:00
 title: Automating your Home with Home Assistant, Conbee II and Raspberry Pi
 tags: raspberry-pi
+cover: /images/homeassistant_cover.jpg
 ---
 
-I recently received a [Conbee II](https://phoscon.de/en/conbee2) stick from Dresden Electronics for Christmas. This little USB stick is quite a powerful tool when it comes to automating your home using the Zigbee protocol.
+![Image](/images/homeassistant.jpg){:.rounded}
+
+In this post, I will show, how to use the [Conbee II](https://phoscon.de/en/conbee2) stick from Dresden Electronics with Home Assistant on a Raspberry Pi to automate your home!
+
+<!--more-->
+
+I recently received a [Conbee II](https://phoscon.de/en/conbee2) stick from Dresden Electronics for Christmas. This little USB stick is quite a powerful tool when it comes to automating your home using the Zigbee protocol. In this post I will show how to use it with Home Assistant to automate your home!
 
 Zigbee is most notably used by the [Philips Hue](https://www.philips-hue.com/en-us) system but found its way into a variety of other products e.g. [Ikea Trådfri](https://www.ikea.com/de/de/product-guides/tradfri-home-smart-beleuchtung-pub61503271), Xiaomi devices or the inexpensive OSRAM / Ledvance Smart+ devices.
 

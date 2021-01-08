@@ -1,13 +1,16 @@
 ---
 modify_date: 2020-12-30 00:02:00
-title: Desiging Good APIs - API First
+title: Designing Good APIs - API First
 tags: api-design
+cover: /images/spiraldown_cover.jpg
 ---
 
-![Spiralling stairwell](/images/spiraldown.jpg)
+![Image](/images/spiraldown.jpg){:.rounded}
 
 This is the third blog of a series that deals with the techniques of designing good APIs.  
 In this post we will be focusing on the technique of **API First**.
+
+<!--more-->
 
 _API First_ is not a buzzword. It is common sense. 
 However, it needs to be done properly.

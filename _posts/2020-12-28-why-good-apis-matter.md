@@ -1,19 +1,23 @@
 ---
+modify_date: 2020-12-28 00:00:00
 title: Why Good APIs Matter
 tags: api-design
-article_header:
-  type: cover
-  image:
-    src: /images/bizCard.jpg
+cover: /images/bizCard_cover.jpg
 ---
 
+![Image](/images/bizCard.jpg){:.rounded}
+
 Your API is the user interface for your consumers' developers. It is the first and most important way to access and interact with your product - be it a service or a software component of a reuse library.
+
+In other words: **your API is your business card**.
+
+<!--more-->
 
 API needs to be managed and designed with care. Just as you spend time to design a graphical user interface, you need to invest time to design your API: what it exposes, what it does, and how it _grows_.
 
 Being the user interface for your consumers' developers it plays an extremely important role in the developer experience and most often provides a first impression about your product's quality, in general.
 
-In other words: **your API is your business card.**
+
 
 If its sloppy, dirty and rugged, don't expect your customers to trust in your professional attitude or the quality of the solution you provide.  
 If it's too special and extravagant and ignoring every design concept the community has embraced, don't expect your customers to believe you know what you are doing.
@@ -32,5 +36,3 @@ They help your consumers, and they will help you, too.
 
 Spend time for their design. Request feedback from your consumers and colleagues on it. Do it with care and put yourself in the shoes of those who will use it.
 And if you don't, prepare to suffer... 😉
-
-**Next:** [What is a "Good" API?](./what-is-a-good-api.md)

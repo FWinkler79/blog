@@ -2,11 +2,14 @@
 modify_date: 2021-01-01 00:04:00
 title: Designing Good APIs - Modelling Errors
 tags: api-design
+cover: /images/error_cover.jpg
 ---
 
-![System Error Image](/images/error.jpg)
+![Image](/images/error.jpg){:.rounded}
 
 When designing an API, the aspect of proper error _modelling_ is just as important as error _logging_, since it will not only allow your consumers to _analyse_ errors, but also to _handle_ them.
+
+<!--more-->
 
 To make this more tangible, we need to distinguish the following possible error types components of your API may encounter:
 

@@ -2,11 +2,15 @@
 modify_date: 2020-12-31 00:03:00
 title: Designing Good APIs - Using Proper Names
 tags: api-design
+cover: /images/typewriter_cover.jpg
 ---
 
-![Typewriter](/images/typewriter.jpg)
+![Image](/images/typewriter.jpg){:.rounded}
 
 Naming is a very important part of designing a good API. Names convey meaning and make using and understanding your API easier. Good naming is half an API's documentation. So take care about your names.
+
+<!--more-->
+
 Below we have summarised a few common rules to keep in mind when picking names of operations, variables and interfaces of your API.
 
 * **Name based on roles** - name variables, parameters, and associated types  according to their roles. In other words, rather than naming a view controller class just 'ViewController', name it by its role - e.g. ListCustomersViewController.

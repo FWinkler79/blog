@@ -2,9 +2,14 @@
 modify_date: 2021-01-04 00:06:00
 title: Cross-building Docker Images on Your Mac
 tags: raspberry-pi
+cover: /images/docker_cover.png
 ---
 
-If you're like me and currently are infatuated with Docker and Raspberry Pi, or if you are just generally interested in separating the development and runtime environment, you might like this next blog.
+![Image](/images/docker.png){:.rounded}
+
+If you're like me and currently are infatuated with Docker and Raspberry Pi, or if you are just generally interested in separating the development and runtime environment, you might like this next blog. Indeed, there is a cool Docker feature that let's you build images for different hardware platforms.
+
+<!--more-->
 
 ## Problem Statement
 

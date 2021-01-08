@@ -2,13 +2,18 @@
 modify_date: 2021-01-03 00:06:00
 title: Designing Good APIs - Documentation
 tags: api-design
+cover: /images/documentation_cover.jpg
 ---
 
-![Documentation](/images/documentation.jpg)
+![Image](/images/documentation.jpg){:.rounded}
 
 Even though a good API should be self-descriptive, proper documentation is required. 
 
-Documentation is not only beneficial for the consumers of your API, but also for you as a developer. Here is how Apple state it:
+Documentation is not only beneficial for the consumers of your API, but also for you as a developer.
+
+<!--more-->
+
+Here is how Apple state it:
 
 > Write a documentation comment for every declaration. Insights gained by writing documentation can have a profound impact on your design, so don’t put it off.
 
