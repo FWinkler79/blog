@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/documentation_cover.jpg
 ---
 
-![Image](/images/documentation.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/documentation.jpg){:.rounded}
 
 Even though a good API should be self-descriptive, proper documentation is required. 
 

@@ -5,7 +5,7 @@ tags: raspberry-pi
 cover: /images/docker_cover.png
 ---
 
-![Image](/images/docker.png){:.rounded}
+![Image]({{ site.baseurl }}/images/docker.png){:.rounded}
 
 If you're like me and currently are infatuated with Docker and Raspberry Pi, or if you are just generally interested in separating the development and runtime environment, you might like this next blog. Indeed, there is a cool Docker feature that let's you build images for different hardware platforms.
 

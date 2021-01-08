@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/craftsmanship_cover.jpg
 ---
 
-![Image](/images/craftsmanship.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/craftsmanship.jpg){:.rounded}
 
 Many consider API design an art. 
 This would imply that it requires a level of ingenuity and creative spirit to come up with a pleasing result. It would also imply that a good / pleasing API is widely subject to "a matter of taste".

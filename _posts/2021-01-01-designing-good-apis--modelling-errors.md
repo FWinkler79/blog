@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/error_cover.jpg
 ---
 
-![Image](/images/error.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/error.jpg){:.rounded}
 
 When designing an API, the aspect of proper error _modelling_ is just as important as error _logging_, since it will not only allow your consumers to _analyse_ errors, but also to _handle_ them.
 

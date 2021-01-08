@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/typewriter_cover.jpg
 ---
 
-![Image](/images/typewriter.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/typewriter.jpg){:.rounded}
 
 Naming is a very important part of designing a good API. Names convey meaning and make using and understanding your API easier. Good naming is half an API's documentation. So take care about your names.
 

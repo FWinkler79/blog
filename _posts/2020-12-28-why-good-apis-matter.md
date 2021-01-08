@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/bizCard_cover.jpg
 ---
 
-![Image](/images/bizCard.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/bizCard.jpg){:.rounded}
 
 Your API is the user interface for your consumers' developers. It is the first and most important way to access and interact with your product - be it a service or a software component of a reuse library.
 

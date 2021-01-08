@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/spiraldown_cover.jpg
 ---
 
-![Image](/images/spiraldown.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/spiraldown.jpg){:.rounded}
 
 This is the third blog of a series that deals with the techniques of designing good APIs.  
 In this post we will be focusing on the technique of **API First**.

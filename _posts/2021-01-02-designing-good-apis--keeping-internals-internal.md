@@ -5,7 +5,7 @@ tags: api-design
 cover: /images/lock_cover.jpg
 ---
 
-![Image](/images/lock.jpg){:.rounded}
+![Image]({{ site.baseurl }}/images/lock.jpg){:.rounded}
 
 A good API focuses only on the _business functionality_ of a service or component and it hides the technical details of the implementation from its consumers.
 
