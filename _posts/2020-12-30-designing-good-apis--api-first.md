@@ -1,0 +1,62 @@
+---
+modify_date: 2020-12-30 00:02:00
+title: Desiging Good APIs - API First
+tags: api-design
+---
+
+![Spiralling stairwell](/images/spiraldown.jpg)
+
+This is the third blog of a series that deals with the techniques of designing good APIs.  
+In this post we will be focusing on the technique of **API First**.
+
+_API First_ is not a buzzword. It is common sense. 
+However, it needs to be done properly.
+
+An API should focus on the _business functionality_ of your software and hide the technical complexity that distracts from it.
+Your API comes first - your implementation comes later. 
+So, force yourself to _forget about your implementation_ for now!
+
+For example, if you design a REST-based micro-service, you might want to start by defining a Swagger file. It will be needed anyway, right? But is that really a good approach?
+A Swagger file contains a lot of technical details (which HTTP method to use, which error code to send, which payload format to consume, etc.) - details that will distract you from what it actually is you want to define: an easy business API.
+
+So **don't start with a Swagger file**. Start with a piece of code. You can use pseudocode, [Interface Description Language](https://en.wikipedia.org/wiki/IDL_specification_language) or your favourite programming language. Whatever you choose, focus just on the essential business functionality.
+
+If you design an API for a library or reuse component in Java, start by defining a Java _interface_, not with a class. Since Java interfaces (usually) do not include any implementation, you won't be tempted to even think about it.
+
+If it is Swift you are programming, start with a _protocol_s. 
+If it is Node.JS consider frameworks like [Implement.js](https://hackernoon.com/implementing-interfaces-in-javascript-with-implement-js-8746838f8caa).
+
+While you define the interfaces of your API, ask yourself the following questions:
+
+* What ***business entities*** does the component deal with? (E.g. Customers, Products, Cars, Consent Forms, etc.?
+* What ***operations*** does the component allow on these business entities?
+* What ***inputs*** do the operations require?
+* What ***outputs*** do the operations produce?
+* What ***user roles*** does the component deal with (if any), and what ***authorizations / access*** rights do they require?
+* What ***errors*** can occur?
+
+Answering these questions is important, and immediately translates into an API:
+* The _business entities_ turn into classes or value objects - they will later serve as data transfer objects (DTOs) to provide data to your library or reuse component and to receive data back from it.They will also act as input parameters to functions or act as output parameters they provide.
+
+* The _operations_ your library or a component provides can be grouped by functionality or by the type of business entity they relate to.  
+This groups them into meaningful units that are dealing with a certain aspect of your service's business functionality.
+These units can later become utility classes or business entity _processors_ and can be described by an (e.g. Java) _interface_.
+
+* Thinking about the _inputs_ and _outputs_ is very important - it forces yourself to think about what it _really_ is your component needs, to perform a certain task and what output information a consumer of your API is really concerned with.
+Take this step seriously and force yourself to focus strictly on the business functionality - leaving aside any internal technical details.  
+Far too many times, developers tend to let internal technical details pollute their inputs and outputs - thus exposing internal behaviour to the outside and eventually turning it into an API which cannot easily be changed later, and burdening or confusing consumers of their API with knowledge they should not have to care about.  
+Put yourselves into the shoes of your consumers - then design an API that deals with their problems. Focus on the implementation later.
+
+* Thinking about the _user roles_ your component or library deals with lets you structure your APIs better. Maybe you will find out that you do not need just one API but one for each user role.
+Thinking about the authorizations and access rights will harden your service from a security point of view. And as these aspects often have an impact on your API design, thinking about them up front is important to avoid incompatible changes in the future.
+
+* Finally, the possible _error_ types turn into exceptions or error structures that will be thrown or returned by your API's operations / functions / methods.  
+Thinking about the possible errors that can occur is very important as well.  
+First, it allows you to anticipate all the things that might go wrong - this will help stabilise your implementation later and improve error resilience of your library.  
+Second, there are errors your library or component _will not be able to handle itself_. These errors will have to be reported to the developers consuming your component and as such become a part of your API definition that needs to be kept stable and backwards-compatible over time.  
+Distinguishing the different kinds of errors and handling them properly in your API is not trivial. Have a look at our [Modelling Errors](./designing-good-apis--modelling-errors.md) post for ways to classify and model errors.
+
+**Next:** [Designing Good APIs: Using Proper Names](./designing-good-apis--using-proper-names.md)  
+**Previous:** [What is a Good API](./what-is-a-good-api.md)
+## References
+* [Three Principles of API First](https://medium.com/adobetech/three-principles-of-api-first-design-fa6666d9f694)
