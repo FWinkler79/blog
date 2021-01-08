@@ -26,7 +26,7 @@ sudo usermod -aG docker <your-user>
 ```
 After that you will likely have to log off and on again to have the group changes applied.
 
-## Installing Docker Compose on Raspberry Pi
+## Installing Docker Compose
 
 To install Docker Compose on Raspi, simply follow [How to install Docker and Docker Compose on Raspberry Pi](https://devdojo.com/bobbyiliev/how-to-install-docker-and-docker-compose-on-raspberry-pi).
 
@@ -38,7 +38,7 @@ sudo apt install python3-dev
 sudo apt-get install -y python3 python3-pip
 sudo pip3 install docker-compose
 ```
-## Uninstalling Docker Engine from Raspberry Pi
+## Uninstalling Docker Engine
 
 ```shell
 # Uninstall the Docker Engine, CLI, and Containerd packages
@@ -49,7 +49,7 @@ sudo apt-get purge docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
-## Docker Images for Raspberry Pi 4B
+## Docker Images for Raspi 4B
 
 Raspberry Pi 4B uses an arm32v7 chip. You will need docker images that were built for this kind of architecture.
 

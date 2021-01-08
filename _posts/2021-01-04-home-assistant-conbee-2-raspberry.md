@@ -44,7 +44,7 @@ Therefore, having a Docker installation on your Raspberry Pi is a pre-requisite.
 
 Other than that, you need a Raspberry Pi - I use the 4B variant, but a 3-series with enough RAM should be fine as well.
 You also need the [Conbee II](https://phoscon.de/en/conbee2) stick, although also the [Raspbee II](https://phoscon.de/en/raspbee2) should work, if you prefer to have everything integrated in one box.
-## Installing Conbee II on Raspberry Pi
+## Installing Conbee II
 
 Installing is as easy as pluggin the Conbee II stick into a USB port. However, it's a bit more tricky than that.
 
