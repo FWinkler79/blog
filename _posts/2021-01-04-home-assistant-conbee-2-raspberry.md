@@ -5,7 +5,7 @@ tags: raspberry-pi
 cover: /images/homeassistant_cover.jpg
 ---
 
-![Image](./images/homeassistant.jpg){:.rounded}
+![Image](/images/homeassistant.jpg){:.rounded}
 
 In this post, I will show, how to use the [Conbee II](https://phoscon.de/en/conbee2) stick from Dresden Electronics with Home Assistant on a Raspberry Pi to automate your home!
 
