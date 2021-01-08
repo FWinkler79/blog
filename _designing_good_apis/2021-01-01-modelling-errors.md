@@ -1,6 +1,7 @@
 ---
 modify_date: 2021-01-01 00:04:00
-title: Designing Good APIs - Modelling Errors
+layout: article
+title: Modelling Errors
 tags: api-design
 cover: /images/error_cover.jpg
 ---

@@ -1,5 +1,6 @@
 ---
 modify_date: 2020-12-28 00:00:00
+layout: article
 title: Why Good APIs Matter
 tags: api-design
 cover: /images/bizCard_cover.jpg

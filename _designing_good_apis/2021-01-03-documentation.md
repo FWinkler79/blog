@@ -1,6 +1,7 @@
 ---
 modify_date: 2021-01-03 00:06:00
-title: Designing Good APIs - Documentation
+layout: article
+title: Documentation
 tags: api-design
 cover: /images/documentation_cover.jpg
 ---

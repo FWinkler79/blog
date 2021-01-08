@@ -1,5 +1,6 @@
 ---
 modify_date: 2020-12-29 00:01:00
+layout: article
 title: What Is a "Good" API
 tags: api-design
 cover: /images/craftsmanship_cover.jpg

@@ -1,6 +1,7 @@
 ---
 modify_date: 2020-12-31 00:03:00
-title: Designing Good APIs - Using Proper Names
+layout: article
+title: Using Proper Names
 tags: api-design
 cover: /images/typewriter_cover.jpg
 ---

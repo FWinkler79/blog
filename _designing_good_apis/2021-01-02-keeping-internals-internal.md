@@ -1,6 +1,7 @@
 ---
 modify_date: 2021-01-02 00:05:00
-title: Designing Good APIs - Keeping Internals Internal
+layout: article
+title: Keeping Internals Internal
 tags: api-design
 cover: /images/lock_cover.jpg
 ---
